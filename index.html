@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN" data-public-site="true">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#344d40"><meta name="description" content="我的追番手记、番剧书架与每周周报。">
+ <title>番间 · 我的追番手记</title><link rel="icon" href="./landscape.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+ <a class="skip" href="#main">跳到正文</a>
+ <div class="shell">
+  <aside class="sidebar">
+   <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">間</span><span><strong>番间<span class="brand-dot">.</span></strong><small>MY ANIME JOURNAL</small></span></a>
+   <p class="sidebar-intro">给喜欢的故事，<br>留一个位置。</p>
+   <nav aria-label="主要导航">
+    <a href="#home" data-nav="home"><span aria-hidden="true">⌂</span>手记首页<small>01</small></a>
+    <a href="#library" data-nav="library"><span aria-hidden="true">▤</span>番剧书架<small>02</small></a>
+    <a href="#reports" data-nav="reports"><span aria-hidden="true">▧</span>每周来信<small>03</small></a>
+    <a href="#records" data-nav="records"><span aria-hidden="true">✎</span>观看记录<small>04</small></a>
+    <a href="#profile" data-nav="profile"><span aria-hidden="true">♧</span>偏好与来源<small>05</small></a>
+   </nav>
+   <div class="sidebar-bottom"><span class="tiny-label">PUBLIC JOURNAL</span><p><i class="dot"></i>公开浏览 · 仅作者可编辑</p><span>慢慢看，也慢慢了解自己。</span><div class="side-flower" aria-hidden="true">✳</div></div>
+  </aside>
+  <div class="workspace">
+   <header class="topbar"><div class="breadcrumbs">我的放映室<span>/</span><strong id="crumb">手记首页</strong></div><div class="sync" id="sync" role="status"><i class="dot"></i>正在加载追番手记</div></header>
+   <div id="notice" class="notice" role="status" hidden></div>
+   <main id="main" tabindex="-1"><div class="loading">正在翻开你的手记…</div></main>
+   <footer class="footer"><span>番间 · 追番手记</span><span>好故事，值得慢慢收藏。 <span aria-hidden="true">✳</span></span></footer>
+  </div>
+ </div>
+ <dialog id="detail-dialog" class="detail-dialog"><button type="button" class="close-dialog" aria-label="关闭详情">×</button><div id="detail-content"></div></dialog>
+ <dialog id="record-dialog" class="record-dialog">
+  <button type="button" class="close-dialog" aria-label="关闭记录表单">×</button>
+  <span class="eyebrow">A NOTE TO MYSELF</span><h2 id="form-title">记下一部番</h2><p class="muted">看到了哪里，什么打动你。写多少都可以。</p>
+  <form id="record-form">
+   <label>番名（注明季数）<input name="title" list="anime-titles" maxlength="160" required placeholder="例如：冰菓"><datalist id="anime-titles"></datalist></label>
+   <div class="form-row"><label>观看状态<select name="status"><option>想看</option><option>在看</option><option>看完</option><option>搁置</option><option>弃番</option></select></label><label>看到第几集<input name="episode" type="number" min="0" max="10000" step="1" placeholder="选填"></label><label>我的评分 / 10<input name="score" type="number" min="0" max="10" step="any" placeholder="未评"></label></div>
+   <label>喜欢的点<textarea name="liked" rows="3" maxlength="2000" placeholder="某个人物、某段关系，或者一种感觉…"></textarea></label>
+   <label>不喜欢的点 / 弃番原因<textarea name="disliked" rows="2" maxlength="2000" placeholder="选填，保留你的真实感受"></textarea></label>
+   <p id="form-error" class="form-error" role="alert"></p>
+   <div class="form-footer"><span>直接保存到 Obsidian · 写前自动备份</span><button type="submit" class="button primary">保存记录 <span aria-hidden="true">↗</span></button></div>
+  </form>
+ </dialog>
+ <div id="toast" role="status" hidden></div>
+</body></html>
